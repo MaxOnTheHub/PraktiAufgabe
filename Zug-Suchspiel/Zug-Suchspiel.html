@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wo steht der Zug?</title>
+  <style>
+    :root {
+      font-family: "Segoe UI", sans-serif;
+      color: #242424;
+      background: #f5f7f6;
+      line-height: 1.6;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #16704a;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    section { margin-bottom: 28px; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+
+    pre {
+      margin: 0;
+      padding: 16px;
+      border-left: 3px solid #16704a;
+      background: #e8eeea;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding-top: 16px;
+      border-top: 1px solid #858e89;
+      color: #505b54;
+      font-size: 14px;
+    }
+
+    @media print {
+      :root { background: #fff; }
+      main { max-width: none; padding: 0; }
+      h2 { break-after: avoid; }
+      pre, li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Wo steht der Zug?</h1>
+
+    <section aria-labelledby="mission">
+      <h2 id="mission">Eure Mission</h2>
+      <p>Auf einer Bahnstrecke steht ein Zug, dessen genaue Position ihr nicht kennt.
+        Die Strecke besteht aus <strong>100 Gleisabschnitten</strong>, nummeriert von 1 bis 100.</p>
+      <p>Ihr übernehmt die Suche: <strong>Findet heraus, in welchem Gleisabschnitt der Zug steht,
+        und benötigt dafür möglichst wenige Abfragen!</strong></p>
+    </section>
+
+    <section aria-labelledby="rules">
+      <h2 id="rules">Die Spielregeln</h2>
+      <p>Zu Beginn legt der Computer zufällig fest, wo der Zug steht. Diese Position bleibt
+        während der Suche unverändert und ist für euch nicht sichtbar.</p>
+      <p>Ihr gebt einen Gleisabschnitt ein. Das Programm vergleicht eure Eingabe mit der
+        Zugposition und antwortet:</p>
+      <ul>
+        <li>„Die Zugposition hat eine höhere Abschnittsnummer.“</li>
+        <li>„Die Zugposition hat eine niedrigere Abschnittsnummer.“</li>
+        <li>„Zug gefunden!“</li>
+      </ul>
+      <p>Nach dem Treffer zeigt das Programm an, wie viele Abfragen ihr benötigt habt.</p>
+    </section>
+
+    <section aria-labelledby="example">
+      <h2 id="example">Beispiel</h2>
+      <pre><samp>Welchen Gleisabschnitt möchtet ihr prüfen? 50
+Die Zugposition hat eine höhere Abschnittsnummer.
+
+Welchen Gleisabschnitt möchtet ihr prüfen? 80
+Die Zugposition hat eine niedrigere Abschnittsnummer.
+
+Welchen Gleisabschnitt möchtet ihr prüfen? 65
+Zug gefunden! Er steht in Gleisabschnitt 65.
+Ihr habt 3 Abfragen benötigt.</samp></pre>
+    </section>
+
+    <section aria-labelledby="tasks">
+      <h2 id="tasks">Eure Programmieraufgabe</h2>
+      <p>Entwickelt das Spiel Schritt für Schritt in <strong>Java</strong>:</p>
+      <ol>
+        <li>Legt zunächst eine feste, geheime Zugposition fest.</li>
+        <li>Ermöglicht die Eingabe eines Gleisabschnitts.</li>
+        <li>Gebt die passende Rückmeldung aus.</li>
+        <li>Ermöglicht weitere Eingaben, bis der Zug gefunden wurde.</li>
+        <li>Zählt die Abfragen und zeigt das Ergebnis an.</li>
+        <li>Lasst den Computer die Zugposition zufällig auswählen.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="bonus">
+      <h2 id="bonus">Zusatzmission</h2>
+      <p>Jetzt tauscht ihr die Rollen: <strong>Ihr denkt euch eine Position aus, und der
+        Computer sucht den Zug.</strong> Ihr sagt ihm nach jedem Vorschlag, ob die gesuchte
+        Abschnittsnummer höher oder niedriger ist oder ob er den Zug gefunden hat.</p>
+      <p>Wie muss der Computer suchen, damit er jede Position mit möglichst wenigen Abfragen findet?</p>
+    </section>
+
+    <footer>
+      Dieses Spiel ist ein vereinfachtes Lernmodell. Echte Bahnsysteme erkennen
+      Gleisbelegungen und Zugpositionen mit technischen Einrichtungen, nicht durch Raten.
+    </footer>
+  </main>
+</body>
+</html>

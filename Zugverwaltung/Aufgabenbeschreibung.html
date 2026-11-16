@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zugverwaltung – Einzelarbeit</title>
+  <style>
+    :root {
+      font-family: "Segoe UI", sans-serif;
+      color: #242424;
+      background: #f5f7f6;
+      line-height: 1.6;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #16704a;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    section { margin-bottom: 28px; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    code { font-family: Consolas, monospace; overflow-wrap: anywhere; }
+
+    .hint {
+      padding-left: 14px;
+      border-left: 3px solid #16704a;
+      color: #505b54;
+    }
+
+    footer {
+      padding-top: 16px;
+      border-top: 1px solid #858e89;
+      color: #505b54;
+      font-size: 14px;
+    }
+
+    @media print {
+      :root { background: #fff; }
+      main { max-width: none; padding: 0; }
+      h1, h2 { break-after: avoid; }
+      li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Zugverwaltung – Einzelarbeit</h1>
+    <p>Entwickle Schritt für Schritt eine eigene Zugverwaltung in Java. Du beginnst mit
+      einzelnen Zügen und erweiterst dein Programm nach und nach um verschiedene Zugarten,
+      einen Bahnhof und ein Konsolenmenü.</p>
+    <p>Bearbeite die Aufgaben der Reihe nach. In den vorbereiteten Java-Dateien findest du
+      die passenden TODOs. Die Lösungen erarbeitest du selbst.</p>
+
+    <section aria-labelledby="start">
+      <h2 id="start">Start in IntelliJ</h2>
+      <ul>
+        <li>Öffne <code>Zugverwaltung.java</code> und starte die <code>main</code>-Methode
+          über das grüne Dreieck.</li>
+        <li>Das Grundgerüst gibt zunächst nur eine Begrüßung aus. Weitere Ausgaben und
+          Eingaben ergänzt du während der Aufgaben.</li>
+        <li>Der Ordner ist als zusätzlicher Quellordner eingetragen. Falls IntelliJ ihn
+          nicht erkennt, lade das Projekt neu oder markiere den Ordner
+          <code>Zugverwaltung</code> als <strong>Sources Root</strong>.</li>
+        <li>Das Zug-Suchspiel bleibt eine unabhängige Anwendung mit eigener
+          <code>main</code>-Methode.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="task-1">
+      <h2 id="task-1">Aufgabe 1 – Klasse Train erstellen</h2>
+      <p>Ergänze in <code>Train.java</code> die Attribute <code>trainNumber</code>,
+        <code>platform</code> und <code>delay</code>. Wähle geeignete Datentypen.</p>
+      <p>Erstelle einen Konstruktor sowie Getter und Setter. Erzeuge in
+        <code>Zugverwaltung.main</code> mindestens drei Objekte und gib ihre Daten aus.</p>
+    </section>
+
+    <section aria-labelledby="task-2">
+      <h2 id="task-2">Aufgabe 2 – Objektverhalten ergänzen</h2>
+      <p>Erweitere <code>Train</code> um folgende Methoden und probiere sie an deinen Objekten aus:</p>
+      <ul>
+        <li><code>increaseDelay(int minutes)</code></li>
+        <li><code>isDelayed()</code></li>
+        <li><code>printInformation()</code></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="task-3">
+      <h2 id="task-3">Aufgabe 3 – Vererbung</h2>
+      <p>Lass die vorbereiteten Klassen <code>RegionalTrain</code> und
+        <code>HighSpeedTrain</code> von <code>Train</code> erben. Ergänze das Attribut
+        <code>maxSpeed</code> und passende Konstruktoren.</p>
+      <p>Erzeuge anschließend Objekte beider Zugarten.</p>
+    </section>
+
+    <section aria-labelledby="task-4">
+      <h2 id="task-4">Aufgabe 4 – Polymorphie</h2>
+      <p>Implementiere die Methode <code>getTrainType()</code> in <code>Train</code> und
+        überschreibe sie in den abgeleiteten Klassen.</p>
+      <p>Rufe die Methode für verschiedene Zugarten über Referenzen vom Typ
+        <code>Train</code> auf.</p>
+    </section>
+
+    <section aria-labelledby="task-5">
+      <h2 id="task-5">Aufgabe 5 – Bahnsteig-Konflikte erkennen</h2>
+      <p>Erweitere <code>Train</code> um <code>arrival</code> und <code>departure</code>.
+        Erkenne zeitliche Überschneidungen am selben Bahnsteig.</p>
+      <p class="hint">Kläre vorab mit deinem Betreuer: Welche Rolle spielt die Verspätung?
+        Gilt eine Abfahrt genau zur Ankunft des nächsten Zuges schon als Konflikt?
+        Für den Einstieg könnt ihr Zeiten innerhalb desselben Tages betrachten.</p>
+    </section>
+
+    <section aria-labelledby="task-6">
+      <h2 id="task-6">Aufgabe 6 – CSV-Datei einlesen</h2>
+      <p>Lies die vorbereitete Datei <code>zuege.csv</code> ein und erstelle aus jeder
+        Datenzeile ein <code>Train</code>-Objekt.</p>
+      <ul>
+        <li>Die Werte werden durch Kommas getrennt.</li>
+        <li>Die erste Zeile enthält die Spaltennamen und ist kein Zug.</li>
+        <li>Zeiten stehen im Format <code>HH:mm</code>, Verspätungen in Minuten.</li>
+      </ul>
+      <p class="hint">Der Dateipfad hängt vom Arbeitsverzeichnis deiner Run-Konfiguration ab:
+        Bei der Projektwurzel lautet er <code>Zugverwaltung/zuege.csv</code>, bei diesem
+        Aufgabenordner als Arbeitsverzeichnis nur <code>zuege.csv</code>.</p>
+    </section>
+
+    <section aria-labelledby="task-7">
+      <h2 id="task-7">Aufgabe 7 – Klasse Station</h2>
+      <p>Ergänze <code>Station</code> um <code>name</code> und eine
+        <code>List&lt;Train&gt;</code>. Implementiere folgende Methoden:</p>
+      <ul>
+        <li><code>addTrain(...)</code></li>
+        <li><code>removeTrain(...)</code></li>
+        <li><code>showAllTrains()</code></li>
+        <li><code>calculateAverageDelay()</code></li>
+      </ul>
+      <p>Überlege, welche Parameter und Rückgabetypen gebraucht werden und wie eine leere
+        Station behandelt wird.</p>
+    </section>
+
+    <section aria-labelledby="bonus">
+      <h2 id="bonus">Bonus – Konsolenbasiertes Zugverwaltungssystem</h2>
+      <p>Entwickle ein menügesteuertes Verwaltungssystem. Beim Start erscheint ein Pseudo-Login:</p>
+      <ul>
+        <li>Benutzername eingeben</li>
+        <li>Passwort eingeben</li>
+        <li>Anmeldung bestätigen</li>
+      </ul>
+      <p class="hint">Nutze nur erfundene Zugangsdaten. Das ist eine Übung, keine echte sichere Anmeldung.</p>
+      <p>Nach erfolgreicher Anmeldung wird wiederholt folgendes Menü angezeigt:</p>
+      <ol>
+        <li>Alle Zuginformationen anzeigen</li>
+        <li>Zug hinzufügen</li>
+        <li>Zug entfernen</li>
+        <li>Verspätung eines Zuges ändern</li>
+        <li>Alle Züge einer Station anzeigen</li>
+        <li>Durchschnittliche Verspätung berechnen</li>
+        <li>Bahnsteig-Konflikte anzeigen</li>
+        <li>Programm beenden</li>
+      </ol>
+      <p>Nutze die bereits erstellten Klassen <code>Train</code>, <code>RegionalTrain</code>,
+        <code>HighSpeedTrain</code> und <code>Station</code>.</p>
+    </section>
+
+    <footer>
+      Lernziele: Klassen und Objekte, Vererbung, Polymorphie, Listen, Dateiverarbeitung,
+      Benutzereingaben und das Zusammenspiel mehrerer Klassen.
+    </footer>
+  </main>
+</body>
+</html>

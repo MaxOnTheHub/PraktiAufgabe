@@ -1,0 +1,4 @@
+trainNumber,platform,delay,arrival,departure
+RE 10,1,0,09:00,09:10
+ICE 42,1,5,09:05,09:15
+RE 25,2,12,09:20,09:30

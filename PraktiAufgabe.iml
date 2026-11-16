@@ -5,6 +5,9 @@
     <content url="file://$MODULE_DIR$/Zug-Suchspiel">
       <sourceFolder url="file://$MODULE_DIR$/Zug-Suchspiel" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/Zugverwaltung">
+      <sourceFolder url="file://$MODULE_DIR$/Zugverwaltung" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="zulu-21" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

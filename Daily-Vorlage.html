@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Euer erstes Daily</title>
+  <style>
+    :root {
+      font-family: "Segoe UI", sans-serif;
+      color: #242424;
+      background: #f5f7f6;
+      accent-color: #16704a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { margin: 0; }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    h1 {
+      margin: 0 0 32px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #16704a;
+      font-size: 28px;
+    }
+
+    .field { margin-bottom: 24px; }
+
+    .inspiration {
+      margin: 0 0 10px;
+      color: #505b54;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 110px;
+      padding: 12px;
+      border: 1px solid #858e89;
+      border-radius: 6px;
+      background: #fff;
+      color: inherit;
+      font: inherit;
+      line-height: 1.5;
+      resize: vertical;
+    }
+
+    textarea:focus-visible {
+      outline: 3px solid #16704a;
+      outline-offset: 3px;
+    }
+
+    @media print {
+      :root { background: #fff; }
+      main { max-width: none; padding: 0; }
+      h1 { margin-bottom: 20px; }
+      .field { break-inside: avoid; margin-bottom: 18px; }
+      textarea { min-height: 90px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Euer erstes Daily</h1>
+    <form>
+      <div class="field">
+        <h2><label for="about">Das bin ich</label></h2>
+        <p id="about-inspiration" class="inspiration">Name, Alter, Schule, Hobbys, Lieblingsfach, Interesse am Praktikum</p>
+        <textarea id="about" name="about" rows="6" aria-describedby="about-inspiration"></textarea>
+      </div>
+      <div class="field">
+        <h2><label for="yesterday">Das habe ich gestern gemacht</label></h2>
+        <p id="yesterday-inspiration" class="inspiration">Abteilung, Kollege oder Kollegin (falls bekannt), Tätigkeiten</p>
+        <textarea id="yesterday" name="yesterday" aria-describedby="yesterday-inspiration"></textarea>
+      </div>
+      <div class="field">
+        <h2><label for="today">Das steht heute an</label></h2>
+        <p id="today-inspiration" class="inspiration">Abteilung, Kollege oder Kollegin (falls bekannt), geplante Tätigkeiten</p>
+        <textarea id="today" name="today" aria-describedby="today-inspiration"></textarea>
+      </div>
+      <div class="field">
+        <h2><label for="tomorrow">Da geht es morgen hin</label></h2>
+        <p id="tomorrow-inspiration" class="inspiration">Abteilung, Kollege oder Kollegin (falls bekannt), geplante Tätigkeiten</p>
+        <textarea id="tomorrow" name="tomorrow" aria-describedby="tomorrow-inspiration"></textarea>
+      </div>
+      <div class="field">
+        <h2><label for="questions">Das möchte ich noch fragen</label></h2>
+        <textarea id="questions" name="questions"></textarea>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

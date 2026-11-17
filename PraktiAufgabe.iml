@@ -9,6 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Zugverwaltung" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="zulu-21" jdkType="JavaSDK" />
+    <content url="file://$MODULE_DIR$/HigherLower">
+      <sourceFolder url="file://$MODULE_DIR$/HigherLower" isTestSource="false" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

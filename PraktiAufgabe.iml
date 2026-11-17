@@ -12,6 +12,9 @@
     <content url="file://$MODULE_DIR$/HigherLower">
       <sourceFolder url="file://$MODULE_DIR$/HigherLower" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/Sandbox">
+      <sourceFolder url="file://$MODULE_DIR$/Sandbox" isTestSource="false" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

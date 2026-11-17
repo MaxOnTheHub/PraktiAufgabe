@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java-Cheatsheet - Die ersten Schritte</title>
+  <style>
+    :root {
+      font-family: "Segoe UI", sans-serif;
+      color: #242424;
+      background: #f5f7f6;
+      line-height: 1.6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 900px; margin: 0 auto; padding: 36px 20px; }
+    h1 {
+      margin: 0 0 28px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #16704a;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+    h2 { margin: 0 0 12px; font-size: 20px; line-height: 1.35; }
+    section { margin-bottom: 32px; }
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 12px; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    code { font-family: Consolas, monospace; overflow-wrap: anywhere; }
+    pre {
+      margin: 0 0 16px;
+      padding: 16px;
+      border-left: 3px solid #16704a;
+      background: #e8eeea;
+      font-size: 14px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .table-scroll { overflow-x: auto; margin-bottom: 16px; }
+    .table-scroll:focus-visible { outline: 3px solid #16704a; outline-offset: 3px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #bbc6bf; text-align: left; vertical-align: top; }
+    th { background: #e8eeea; }
+    @media print {
+      :root { background: #fff; }
+      main { max-width: none; padding: 0; }
+      h1, h2 { break-after: avoid; }
+      pre, tr { break-inside: avoid; }
+      .table-scroll { overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Java-Cheatsheet - Die ersten Schritte</h1>
+
+    <section aria-labelledby="programm">
+      <h2 id="programm">1. Das kleinste Programm</h2>
+      <p>Die Datei heißt <code>Sandbox.java</code>. Klassenname und Dateiname müssen zusammenpassen.</p>
+      <pre><code>public class Sandbox {
+    public static void main(String[] args) {
+        System.out.println("Hallo Welt!");
+    }
+}</code></pre>
+      <p>Euren eigenen Code schreibt ihr zunächst zwischen die geschweiften Klammern der
+        <code>main</code>-Methode. Die Anweisungen werden von oben nach unten ausgeführt.</p>
+    </section>
+
+    <section aria-labelledby="variablen">
+      <h2 id="variablen">2. Variablen - Werte merken</h2>
+      <p>Eine Variable hat einen <strong>Datentyp</strong>, einen <strong>Namen</strong> und einen <strong>Wert</strong>.</p>
+      <pre><code>int alter = 14;</code></pre>
+      <p>Allgemeiner Aufbau: <code>Datentyp name = wert;</code></p>
+      <div class="table-scroll" role="region" aria-label="Datentypen" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Datentyp</th><th scope="col">Wofür?</th><th scope="col">Beispiel</th></tr></thead>
+          <tbody>
+            <tr><td><code>int</code></td><td>Ganze Zahlen</td><td><code>int punkte = 0;</code></td></tr>
+            <tr><td><code>long</code></td><td>Besonders große ganze Zahlen</td><td><code>long aufrufe = 47_548_839_843L;</code></td></tr>
+            <tr><td><code>double</code></td><td>Kommazahlen</td><td><code>double preis = 2.50;</code></td></tr>
+            <tr><td><code>boolean</code></td><td>Wahr oder falsch</td><td><code>boolean gefunden = false;</code></td></tr>
+            <tr><td><code>char</code></td><td>Ein einzelnes Zeichen</td><td><code>char auswahl = 'A';</code></td></tr>
+            <tr><td><code>String</code></td><td>Text</td><td><code>String name = "Alex";</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul>
+        <li>Kommazahlen werden im Code mit einem <strong>Punkt</strong> geschrieben: <code>2.50</code>.</li>
+        <li>Text steht in <strong>doppelten</strong> Anführungszeichen, ein <code>char</code> in <strong>einfachen</strong>.</li>
+        <li><code>String</code> wird großgeschrieben, die anderen Datentypen in der Tabelle klein.</li>
+        <li>Das <code>L</code> kennzeichnet eine <code>long</code>-Zahl. Unterstriche in Zahlen verbessern nur die Lesbarkeit.</li>
+        <li>Ein <code>int</code> reicht von -2.147.483.648 bis 2.147.483.647. Für größere Zahlen braucht ihr zum Beispiel <code>long</code>.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="aendern">
+      <h2 id="aendern">3. Werte ändern</h2>
+      <pre><code>int punkte = 0;
+punkte = 5;
+punkte = punkte + 1;
+punkte++;</code></pre>
+      <p>Der Datentyp steht nur beim Anlegen der Variablen davor. <code>punkte++</code> erhöht den Wert um eins.
+        Nach diesen vier Zeilen ist <code>punkte</code> gleich <code>7</code>.</p>
+      <p>Ein Wert, der nicht mehr geändert werden darf:</p>
+      <pre><code>final int MAX_VERSUCHE = 7;</code></pre>
+    </section>
+
+    <section aria-labelledby="ausgabe">
+      <h2 id="ausgabe">4. Etwas ausgeben</h2>
+      <pre><code>String name = "Alex";
+int punkte = 3;
+
+System.out.println("Hallo!");
+System.out.println(name);
+System.out.println("Punkte: " + punkte);
+System.out.print("Dein Tipp: ");</code></pre>
+      <p><code>println</code> beginnt nach der Ausgabe eine neue Zeile. <code>print</code> bleibt in derselben Zeile.
+        Mit <code>+</code> könnt ihr Text und Werte verbinden.</p>
+    </section>
+
+    <section aria-labelledby="rechnen">
+      <h2 id="rechnen">5. Rechnen</h2>
+      <div class="table-scroll" role="region" aria-label="Rechenzeichen" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Zeichen</th><th scope="col">Bedeutung</th><th scope="col">Beispiel</th><th scope="col">Ergebnis</th></tr></thead>
+          <tbody>
+            <tr><td><code>+</code></td><td>Plus</td><td><code>5 + 2</code></td><td><code>7</code></td></tr>
+            <tr><td><code>-</code></td><td>Minus</td><td><code>5 - 2</code></td><td><code>3</code></td></tr>
+            <tr><td><code>*</code></td><td>Mal</td><td><code>5 * 2</code></td><td><code>10</code></td></tr>
+            <tr><td><code>/</code></td><td>Geteilt</td><td><code>5 / 2</code></td><td><code>2</code></td></tr>
+            <tr><td><code>%</code></td><td>Rest einer Division</td><td><code>5 % 2</code></td><td><code>1</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Achtung:</strong> Ganze Zahl geteilt durch ganze Zahl ergibt in Java wieder eine ganze Zahl.</p>
+      <pre><code>double ergebnis = 5.0 / 2;  // 2.5
+int summe = (3 + 2) * 4;   // 20</code></pre>
+    </section>
+
+    <section aria-labelledby="vergleichen">
+      <h2 id="vergleichen">6. Werte vergleichen</h2>
+      <p>Ein Vergleich ergibt immer <code>true</code> oder <code>false</code>.</p>
+      <div class="table-scroll" role="region" aria-label="Vergleichszeichen" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Zeichen</th><th scope="col">Bedeutung</th><th scope="col">Beispiel</th></tr></thead>
+          <tbody>
+            <tr><td><code>==</code></td><td>Gleich</td><td><code>tipp == zugposition</code></td></tr>
+            <tr><td><code>!=</code></td><td>Ungleich</td><td><code>tipp != zugposition</code></td></tr>
+            <tr><td><code>&lt;</code></td><td>Kleiner</td><td><code>tipp &lt; zugposition</code></td></tr>
+            <tr><td><code>&gt;</code></td><td>Größer</td><td><code>tipp &gt; zugposition</code></td></tr>
+            <tr><td><code>&lt;=</code></td><td>Kleiner oder gleich</td><td><code>punkte &lt;= 10</code></td></tr>
+            <tr><td><code>&gt;=</code></td><td>Größer oder gleich</td><td><code>alter &gt;= 14</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Wichtig:</strong> <code>=</code> weist einen Wert zu. <code>==</code> vergleicht Werte.</p>
+      <p>Textinhalte vergleicht ihr mit <code>.equals()</code>, nicht mit <code>==</code>:</p>
+      <pre><code>String name = "Alex";
+boolean gleicherName = name.equals("Alex");</code></pre>
+    </section>
+
+    <section aria-labelledby="bedingungen">
+      <h2 id="bedingungen">7. Entscheidungen mit if / else</h2>
+      <pre><code>int tipp = 40;
+int zugposition = 65;
+
+if (tipp &lt; zugposition) {
+    System.out.println("Die gesuchte Zahl ist hoeher.");
+} else if (tipp &gt; zugposition) {
+    System.out.println("Die gesuchte Zahl ist niedriger.");
+} else {
+    System.out.println("Gefunden!");
+}</code></pre>
+      <p><code>if</code> bedeutet <strong>wenn</strong>, <code>else if</code> bedeutet <strong>sonst wenn</strong>,
+        <code>else</code> bedeutet <strong>sonst</strong>.</p>
+      <p>Bedingungen verbinden:</p>
+      <pre><code>boolean imBereich = tipp &gt;= 1 &amp;&amp; tipp &lt;= 100;
+boolean passendeAuswahl = tipp == 1 || tipp == 2;
+boolean nichtGefunden = !gefunden;</code></pre>
+      <p><code>&amp;&amp;</code> = und, <code>||</code> = oder, <code>!</code> = nicht.
+        Die letzte Zeile setzt voraus, dass eine <code>boolean</code>-Variable namens <code>gefunden</code> existiert.</p>
+    </section>
+
+    <section aria-labelledby="eingaben">
+      <h2 id="eingaben">8. Eingaben mit Scanner</h2>
+      <p>Vollständiges Beispiel für eine Zahleneingabe:</p>
+      <pre><code>import java.util.Scanner;
+
+public class Sandbox {
+    public static void main(String[] args) {
+        try (Scanner eingabe = new Scanner(System.in)) {
+            System.out.print("Wie alt bist du? ");
+            int alter = eingabe.nextInt();
+            System.out.println("Du bist " + alter + " Jahre alt.");
+        }
+    }
+}</code></pre>
+      <p>Im Run-Fenster eine ganze Zahl eingeben und <strong>Enter</strong> drücken.</p>
+      <ul>
+        <li><code>eingabe.nextInt()</code> liest eine ganze Zahl.</li>
+        <li><code>eingabe.nextLine()</code> liest eine Textzeile.</li>
+        <li>Wenn auf <code>nextInt()</code> eine Texteingabe mit <code>nextLine()</code> folgt, zuerst einmal zusätzlich
+          <code>eingabe.nextLine();</code> aufrufen. Das verbraucht den übrig gebliebenen Zeilenumbruch.</li>
+        <li>Für den Einstieg setzen wir passende Eingaben voraus.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="schleifen">
+      <h2 id="schleifen">9. Wiederholen mit while</h2>
+      <pre><code>int versuch = 1;
+
+while (versuch &lt;= 3) {
+    System.out.println("Versuch " + versuch);
+    versuch++;
+}</code></pre>
+      <p>Der Block wird wiederholt, <strong>solange</strong> die Bedingung wahr ist. Hier erscheinen die Versuche 1, 2 und 3.
+        Ändert sich die Bedingung nie, kann eine Endlosschleife entstehen.</p>
+    </section>
+
+    <section aria-labelledby="schreibregeln">
+      <h2 id="schreibregeln">10. Die wichtigsten Schreibregeln</h2>
+      <ul>
+        <li>Anweisungen wie Zuweisungen und Methodenaufrufe enden mit <code>;</code>.</li>
+        <li>Blöcke stehen zwischen <code>{</code> und <code>}</code>. Hinter dem Kopf von <code>if</code> oder <code>while</code> steht kein Semikolon.</li>
+        <li>Groß- und Kleinschreibung zählt: <code>punkte</code> und <code>Punkte</code> sind verschiedene Namen.</li>
+        <li>Variablen klein beginnen und ohne Leerzeichen schreiben: <code>anzahlVersuche</code>.</li>
+        <li>Mit <code>//</code> beginnt ein Kommentar bis zum Zeilenende. Er wird nicht ausgeführt.</li>
+        <li>Beispiele sind einzeln gedacht. Fügt nicht alle Blöcke unverändert zusammen, sonst werden manche Variablen mehrfach angelegt.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
